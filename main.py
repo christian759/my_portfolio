@@ -1,32 +1,25 @@
 import uvicorn
-from nicegui import api_router, ui, app
+from fastapi import FastAPI, Request
+from fastapi.templating import Jinja2Templates
 
-a = api_router.APIRouter()
+app = FastAPI()
+template = Jinja2Templates(directory="templates")
 
-# Define API endpoint
-@a.get("/api/endpoint")
-def api_endpoint():
-    return {"message": "API endpoint is working"}
+@app.get("/")
+def home(request: Request):
+    return template.TemplateResponse(request=request, name = "home.html")
 
-@ui.page("/")
-def home():
-    ui.header("")
-    ui.label("CEO1")
-    ui.button("Contact page", on_click = lambda:ui.navigate.to(f"/contact"))
-    ui.button("Projects page", on_click = lambda:ui.navigate.to(f"/projects"))
+@app.get("/projects")
+def projects(request: Request):
+    return template.TemplateResponse(request=request, name = "projects.html")
 
-@ui.page("/contact")
-def contact():
-    ui.label("Contact page")
-    ui.button("Home page", on_click = lambda:ui.navigate.to(f"/"))
+@app.get("/about")
+def about(request: Request):
+    return template.TemplateResponse(request=request, name = "about.html")
 
-@ui.page("/projects")
-def projects():
-    ui.label("Projects")
-    ui.button("Home Page", on_click = lambda:ui.navigate.to(f"/"))
+@app.get("/contact")
+def about(request: Request):
+    return template.TemplateResponse(request=request, name = "contact.html")
 
-app.include_router(a)
-ui.run_with(app)
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     uvicorn.run(app)
