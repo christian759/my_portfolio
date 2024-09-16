@@ -19,6 +19,3 @@ def about(request: Request):
 @app.get("/contact")
 def about(request: Request):
     return template.TemplateResponse(request=request, name = "contact.html")
-
-if __name__ == "__main__":
-    uvicorn.run(app)
