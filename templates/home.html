@@ -1,22 +1,38 @@
-<!-- templates/home.html -->
-{% extends "base.html" %}
-
-{% block title %}CEO1 portfolio{% endblock %}
-
-{% block content %}
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <a href="#about" hx-get="about.html" hx-target="#content" hx-trigger="click">About Me</a>
-            <a href="#projects" hx-get="projects.html" hx-target="#content" hx-trigger="click">Projects</a>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".nav-link").forEach(link => {
+                link.addEventListener("click", function() {
+                    // Remove the clicked link
+                    this.remove();
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="bg-gray-800 text-white p-4">
+        <h1 class="text-3xl">Welcome to My Portfolio</h1>
+        <nav id="nav">
+            <a href="#contact" hx-get="/contact" hx-target="#main-content" hx-swap="beforeend" class="nav-link mr-4 text-blue-300 hover:text-white">About Me</a>
+            <a href="#projects" hx-get="/projects" hx-target="#main-content" hx-swap="beforeend" class="nav-link text-blue-300 hover:text-white">Projects</a>
         </nav>
     </header>
 
-    <main id="content">
-        <p>Click on the navigation links to load content without reloading the page.</p>
+    <main id="main-content" class="p-4">
+        <h2 class="text-2xl font-bold">Home Page Content</h2>
+        <p>Welcome to my portfolio. Click the links above to navigate.</p>
     </main>
 
-    <footer>
+    <footer class="bg-gray-800 text-white p-4 text-center">
         <p>&copy; 2024 My Portfolio</p>
     </footer>
-{% endblock %}
+</body>
+</html>

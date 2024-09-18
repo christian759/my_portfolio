@@ -15,10 +15,6 @@ async def home(request: Request):
 async def projects(request: Request):
     return templates.TemplateResponse("projects.html", {"request": request})
 
-@app.get("/about", response_class=HTMLResponse)
-async def about(request: Request):
-    return templates.TemplateResponse("about.html", {"request": request})
-
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
     return templates.TemplateResponse("contact.html", {"request": request})
