@@ -1,21 +1,24 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.templating import Jinja2Templates
+from fastapi.requests import Request
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
-template = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="templates")
 
-@app.get("/")
-def home(request: Request):
-    return template.TemplateResponse(request=request, name = "home.html")
+# Define API endpoints
+@app.get("/", response_class=HTMLResponse)
+async def home(request: Request):
+    return templates.TemplateResponse("home.html", {"request": request})
 
-@app.get("/projects")
-def projects(request: Request):
-    return template.TemplateResponse(request=request, name = "projects.html")
+@app.get("/projects", response_class=HTMLResponse)
+async def projects(request: Request):
+    return templates.TemplateResponse("projects.html", {"request": request})
 
-@app.get("/about")
-def about(request: Request):
-    return template.TemplateResponse(request=request, name = "about.html")
+@app.get("/about", response_class=HTMLResponse)
+async def about(request: Request):
+    return templates.TemplateResponse("about.html", {"request": request})
 
-@app.get("/contact")
-def about(request: Request):
-    return template.TemplateResponse(request=request, name = "contact.html")
+@app.get("/contact", response_class=HTMLResponse)
+async def contact(request: Request):
+    return templates.TemplateResponse("contact.html", {"request": request})

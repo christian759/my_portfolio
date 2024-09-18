@@ -4,6 +4,19 @@
 {% block title %}CEO1 portfolio{% endblock %}
 
 {% block content %}
-    <h1 class="">Welcome to My FastAPI App</h1>
-    <p class="">This is the homepage</p>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <a href="#about" hx-get="about.html" hx-target="#content" hx-trigger="click">About Me</a>
+            <a href="#projects" hx-get="projects.html" hx-target="#content" hx-trigger="click">Projects</a>
+        </nav>
+    </header>
+
+    <main id="content">
+        <p>Click on the navigation links to load content without reloading the page.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
 {% endblock %}
