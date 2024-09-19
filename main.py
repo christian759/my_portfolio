@@ -4,17 +4,11 @@ from fastapi.requests import Request
 from fastapi.responses import HTMLResponse
 
 app = FastAPI()
+
+""" HTML FOLDER """
 templates = Jinja2Templates(directory="templates")
 
 # Define API endpoints
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
-
-@app.get("/projects", response_class=HTMLResponse)
-async def projects(request: Request):
-    return templates.TemplateResponse("projects.html", {"request": request})
-
-@app.get("/contact", response_class=HTMLResponse)
-async def contact(request: Request):
-    return templates.TemplateResponse("contact.html", {"request": request})

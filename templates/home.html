@@ -3,36 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Christian's Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/htmx.org"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".nav-link").forEach(link => {
-                link.addEventListener("click", function() {
-                    // Remove the clicked link
-                    this.remove();
-                });
-            });
-        });
-    </script>
+    <style>
+        .background-gradient {
+            background: linear-gradient(135deg, #1a1a1a, #333);
+        }
+    </style>
 </head>
-<body>
-    <header class="bg-gray-800 text-white p-4">
-        <h1 class="text-3xl">Welcome to My Portfolio</h1>
-        <nav id="nav">
-            <a href="#contact" hx-get="/contact" hx-target="#main-content" hx-swap="beforeend" class="nav-link mr-4 text-blue-300 hover:text-white">About Me</a>
-            <a href="#projects" hx-get="/projects" hx-target="#main-content" hx-swap="beforeend" class="nav-link text-blue-300 hover:text-white">Projects</a>
-        </nav>
+<body class="background-gradient text-white">
+    <header class="text-center py-16">
+        <h1 class="text-6xl font-extrabold mb-4 text-yellow-400">CEO1's Portfolio</h1>
+        <p class="text-xl mb-8">Explore my expertise in AI, web, and mobile development.</p>
     </header>
 
-    <main id="main-content" class="p-4">
-        <h2 class="text-2xl font-bold">Home Page Content</h2>
-        <p>Welcome to my portfolio. Click the links above to navigate.</p>
+    <main class="px-6 md:px-12 lg:px-24 space-y-16">
+        <!-- About Me Section -->
+        <section class="bg-gray-800 p-8 rounded-xl shadow-lg">
+            <h2 class="text-4xl font-extrabold mb-4 text-yellow-400">About Me</h2>
+            <p class="text-lg mb-4">
+                I'm Christian, a dedicated software developer with a passion for artificial intelligence and machine learning. My journey has led me to explore various technologies and frameworks that fuel my enthusiasm for creating impactful solutions.
+            </p>
+            <p class="text-lg mb-4">
+                I specialize in:
+                <ul class="list-disc ml-8 space-y-1" >
+                    <li><strong>Python</strong>, utilizing its robust libraries for AI and ML projects</li>
+                    <li><strong>Kotlin</strong> for modern Android and Desktop app development with <strong>Jetpack Compose</strong></li>
+                    <li>My web development skills are highlighted through my work with <strong>Flask</strong> and <strong>FastAPI</strong>, complemented by my use of <strong>Tailwind CSS</strong> for styling and <strong>HTMX</strong> for enhanced interactivity.</li>
+                </ul>
+            </p>
+            <br>
+            <p class="text-lg mb-4">
+                In the realm of data analytics, I use <strong>pandas</strong>, <strong>NumPy</strong>, and <strong>scikit-learn</strong> to uncover insights from data. My curiosity extends to <strong>cybersecurity</strong> where I explore ethical hacking and network security practices.
+            </p>
+        </section>
+
+        <!-- Technologies Section -->
+        <section class="bg-gray-800 p-8 rounded-xl shadow-lg">
+            <h2 class="text-4xl font-extrabold mb-4 text-yellow-400">Technologies I Use</h2>
+            <ul class="list-disc ml-8 text-lg space-y-2">
+                <li><strong>Languages:</strong> <strong>Python</strong> and <strong>Kotlin</strong>. Python for AI, ML, and web development, and Kotlin for Android and Desktop apps with Jetpack Compose.</li>
+                <li><strong>Frameworks & Libraries:</strong>
+                    <ul class="list-disc ml-8 space-y-1">
+                        <li><strong>Flask</strong> and <strong>FastAPI</strong> for web backends.</li>
+                        <li><strong>HTMX</strong> for dynamic web applications.</li>
+                        <li><strong>Tailwind CSS and HTMX</strong> for modern, responsive designs.</li>
+                        <li><strong>TensorFlow</strong>, <strong>Keras</strong> and <strong>Pytorch</strong> for machine learning models.</li>
+                        <li><strong>Jetpack Compose</strong> for application development</li>
+                    </ul>
+                </li>
+                <li><strong>AI/ML Expertise:</strong> <strong>Reinforcement Learning (RL)</strong>, <strong>NLP</strong>, <strong>MLOPS</strong>, <strong>Deep Learning (DL)</strong>, and <strong>Genetic Algorithms (GA)</strong>.</li>
+                <li><strong>Application Development:</strong> <strong>Jetpack Compose</strong> for Android and Desktop apps.</li>
+                <li><strong>Data Analytics:</strong> <strong>pandas</strong>, <strong>NumPy</strong>, and <strong>scikit-learn</strong>.</li>
+                <li><strong>Cybersecurity:</strong> <strong>Ethical hacking</strong> and <strong>network security</strong>.</li>
+            </ul>
+        </section>
+
+        <!-- Recent Projects Section -->
+        <section class="bg-gray-800 p-8 rounded-xl shadow-lg">
+            <h2 class="text-4xl font-extrabold mb-4 text-yellow-400">Recent Projects</h2>
+
+            <h3 class="text-3xl font-bold mb-2">Lyrics Transformer Project</h3>
+            <p class="text-lg mb-4">
+                This project involves a sophisticated transformer model that processes both text and image inputs to predict the text within images. It’s designed to enhance OCR for song lyrics and textual content embedded in visuals, leveraging advanced neural network architectures.
+            </p>
+
+            <h3 class="text-3xl font-bold mb-2">MLOps with MLflow: Titanic Dataset</h3>
+            <p class="text-lg mb-4">
+                I applied MLOps practices using MLflow to manage and optimize the machine learning lifecycle with the Titanic dataset. This includes experiment tracking, model comparison, and performance monitoring, ensuring a streamlined and reproducible workflow.
+            </p>
+
+            <h3 class="text-3xl font-bold mb-2">AI-Powered Web and Mobile Applications</h3>
+            <p class="text-lg mb-4">
+                My work integrates AI into both web and mobile platforms. I develop web applications with Flask and FastAPI, and create dynamic Android apps using Jetpack Compose. By incorporating AI models, I aim to deliver enhanced, intelligent user experiences.
+            </p>
+
+            <h3 class="text-3xl font-bold mb-2">Explore More on GitHub</h3>
+            <p class="text-lg">
+                Discover more of my projects and contributions on my <a href="https://github.com/christian759?tab=repositories" class="text-yellow-400 hover:text-yellow-300" target="_blank">GitHub profile</a>. You’ll find a range of repositories showcasing my skills and interests.
+            </p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="bg-gray-800 p-8 rounded-xl shadow-lg">
+            <h2 class="text-4xl font-extrabold mb-4 text-yellow-400">Contact</h2>
+            <p class="text-lg mb-4">
+                I’m open to new opportunities and collaborations. Feel free to connect with me through the following:
+            </p>
+            <ul class="list-disc ml-8 text-lg space-y-2">
+                <li><a href="mailto:christian4onos@gmail.com" class="text-yellow-400 hover:text-yellow-300">Email me</a></li>
+                <li><a href="https://x.com/christian134759" class="text-yellow-400 hover:text-yellow-300" target="_blank">Follow me on X (formerly Twitter)</a></li>
+                <li><a href="https://github.com/christian759?tab=repositories" class="text-yellow-400 hover:text-yellow-300" target="_blank">View My GitHub Projects</a></li>
+            </ul>
+        </section>
     </main>
 
-    <footer class="bg-gray-800 text-white p-4 text-center">
-        <p>&copy; 2024 My Portfolio</p>
+    <footer class="bg-gray-900 text-center py-4">
+        <p>&copy; 2024 Christian's Portfolio</p>
     </footer>
 </body>
 </html>
